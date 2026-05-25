@@ -9,9 +9,24 @@ export default function PhotoWidget({ images = [], interval = 4000 }) {
   const [prev, setPrev] = useState(null);
   const paused = useRef(false);
   const touchStartX = useRef(null);
+  const kbStartRef = useRef(Date.now());
+  // Snapshot elapsed KB time at the moment a transition fires
+  const kbElapsedRef = useRef(0);
+
+  // Preload all images so they're in cache before advance() fires
+  useEffect(() => {
+    images.forEach(({ src }) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, [images]);
 
   const advance = useCallback(
     (dir = 1) => {
+      // Capture how far into the Ken Burns animation the current image is
+      kbElapsedRef.current = (Date.now() - kbStartRef.current) / 1000;
+      kbStartRef.current = Date.now();
+
       setCurrent((c) => {
         const next = (c + dir + images.length) % images.length;
         setPrev(c);
@@ -54,7 +69,7 @@ export default function PhotoWidget({ images = [], interval = 4000 }) {
       aria-label={images[current].alt ?? "Photo slideshow"}
     >
       <div className={styles.frame}>
-        {/* Leaving image — sits below, no KB restart needed */}
+        {/* Leaving image — negative animationDelay continues KB mid-stream */}
         {prev !== null && (
           <div key={`p${prev}`} className={`${styles.slide} ${styles.below}`}>
             <img
@@ -62,18 +77,19 @@ export default function PhotoWidget({ images = [], interval = 4000 }) {
               alt=""
               aria-hidden="true"
               className={`${styles.image} ${KB_CLASSES[prev % KB_CLASSES.length]}`}
-              loading="lazy"
+              style={{ animationDelay: `-${kbElapsedRef.current}s` }}
+              loading="eager"
             />
           </div>
         )}
 
-        {/* Entering image — fades in on top, KB animation restarts via key */}
+        {/* Entering image — KB restarts fresh via key, image already in cache */}
         <div key={`c${current}`} className={`${styles.slide} ${styles.above}`}>
           <img
             src={images[current].src}
             alt={images[current].alt ?? ""}
             className={`${styles.image} ${KB_CLASSES[current % KB_CLASSES.length]}`}
-            loading="lazy"
+            loading="eager"
           />
         </div>
 
