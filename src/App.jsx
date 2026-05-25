@@ -1,4 +1,5 @@
 import LinkButton from "./components/LinkButton";
+import IconRow from "./components/IconRow";
 import ExpandableBio from "./components/ExpandableBio";
 import PhotoWidget from "./components/PhotoWidget";
 import { useSmugMugPhotos } from "./hooks/useSmugMugPhotos";
@@ -35,6 +36,7 @@ export default function App() {
           <img src="https://i.imgur.com/i5gnF20.jpg" alt="Drew Cook" />
         </div>
         <h1 className={styles.name}>Developed by Drewford</h1>
+        <IconRow links={links} />
         <ExpandableBio>
           {bioContent}
         </ExpandableBio>
