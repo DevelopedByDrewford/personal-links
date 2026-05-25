@@ -17,17 +17,7 @@ const bioContent = (
     <InlineLink href="https://kristinealicia.com">
         Kristine Alicia</InlineLink>{" "}
     documenting concerts, behind-the-scenes studio sessions, and immersive cultural experiences
-    at venues like the {" "}
-    <InlineLink href="https://www.houseofblues.com">
-      House of Blues
-    </InlineLink>, {" "}
-    <InlineLink href="https://www.whiteoakmusichall.com">
-      White Oak Music Hall
-    </InlineLink>, and the{" "}
-    <InlineLink href="https://www.deluxetheater.com">
-      DeLuxe Theater
-    </InlineLink>
-    .
+    at venues like the House of Blues, White Oak Music Hall, and the DeLuxe Theater.
     <br />
     While Drewford is primarily active behind the camera, his work is heavily
     shared across platforms.
