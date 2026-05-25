@@ -1,7 +1,8 @@
 import LinkButton from "./components/LinkButton";
 import ExpandableBio from "./components/ExpandableBio";
+import bioContent from "./content/bioContent";
 import links from "./data/links";
-import styles from "./App.module.css";
+import styles from "./styles/App.module.css";
 
 export default function App() {
   return (
@@ -12,17 +13,7 @@ export default function App() {
         </div>
         <h1 className={styles.name}>Developed by Drewford</h1>
         <ExpandableBio>
-          Drew Cook is a Houston, TX-based software engineer, photographer, and
-          videographer who specializes in capturing the city&apos;s local music,
-          hip-hop, and entertainment scene.{" "}
-          <br />
-          He frequently collaborates with regional artists and event organizers
-          like BLD PWR, L.O.U.D Muzik, and reggae artist Kristine Alicia documenting concerts,
-          behind-the-scenes studio sessions, and live performances at venues like
-          the House of Blues, White Oak Music Hall, and the DeLuxe Theater.{" "}
-          <br />
-          While Drewford is primarily active behind the camera, his work is
-          heavily shared across platforms.
+          {bioContent}
         </ExpandableBio>
         <nav className={styles.links} aria-label="Social links">
           {links.map((link) => (
