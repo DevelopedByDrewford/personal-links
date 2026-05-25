@@ -6,18 +6,24 @@ export default function App() {
   return (
     <main className={styles.page}>
       <div className={styles.card}>
-        <div className={styles.avatar} aria-hidden="true">
-          {/* Replace with an <img> tag for a real avatar */}
-          <span>AC</span>
+        <div className={styles.avatar}>
+          <img src="https://i.imgur.com/i5gnF20.jpg" alt="Drew Cook" />
         </div>
-        <h1 className={styles.name}>Your Name</h1>
-        <p className={styles.bio}>Short bio or tagline goes here.</p>
+        <h1 className={styles.name}>Developed by Drewford</h1>
+        <p className={styles.bio}>Drew Cook
+          <br />Software Engineer & Photographer
+          <br />Houston, TX</p>
         <nav className={styles.links} aria-label="Social links">
           {links.map((link) => (
             <LinkButton key={link.id} {...link} />
           ))}
         </nav>
       </div>
+      <footer className={styles.footer}>
+        <a href="https://drewford.dev" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
+          Developed by Drewford
+        </a>
+      </footer>
     </main>
   );
 }
