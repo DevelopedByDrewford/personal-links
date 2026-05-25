@@ -10,7 +10,6 @@ export default function IconRow({ links = [] }) {
           target="_blank"
           rel="noopener noreferrer"
           className={styles.icon}
-          style={{ backgroundColor: color }}
           aria-label={label}
         >
           <img src={img} alt={alt} className={styles.img} />
