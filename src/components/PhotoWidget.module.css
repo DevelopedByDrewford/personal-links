@@ -6,6 +6,7 @@
   /* Lift off the dark background like an iOS widget */
   filter: drop-shadow(0 8px 28px rgba(0, 0, 0, 0.65))
           drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+  margin-top: 8px;
 }
 
 .frame {
