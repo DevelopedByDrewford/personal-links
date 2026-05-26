@@ -4,6 +4,7 @@ import { trackEvent } from "./utils/analytics";
 import IconRow from "./components/IconRow";
 import ExpandableBio from "./components/ExpandableBio";
 import ActionBar from "./components/ActionBar";
+import EngineeringProjects from "./components/EngineeringProjects";
 import PhotoWidget from "./components/PhotoWidget";
 import AvatarModal from "./components/AvatarModal";
 import { useSmugMugPhotos } from "./hooks/useSmugMugPhotos";
@@ -42,11 +43,7 @@ export default function App() {
         </ExpandableBio>
         <ActionBar />
         <PhotoWidget images={photos} interval={4500} loading={loading} />
-        {/* <nav className={styles.links} aria-label="Social links">
-          {links.map((link) => (
-            <LinkButton key={link.id} {...link} />
-          ))}
-        </nav> */}
+        <EngineeringProjects />
       </div>
       <footer className={styles.footer}>
         <a href="https://drewford.dev" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
