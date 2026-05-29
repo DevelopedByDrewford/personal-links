@@ -5,8 +5,6 @@ const projects = [
   { label: "Metro App", href: "https://metro.drewford.dev" },
   { label: "Adventure Game", href: "https://death-house.drewford.dev"},
   { label: "Dev Portfolio", href: "https://drewford.dev" },
-
-
 ];
 
 export default function EngineeringProjects() {
