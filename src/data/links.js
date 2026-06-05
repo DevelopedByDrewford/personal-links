@@ -9,10 +9,10 @@ const links = [
   },
   {
     id: 2,
-    label: "SmugMug",
-    href: "https://drewford.smugmug.com",
-    img: "https://cdn.simpleicons.org/smugmug/ffffff",
-    alt: "SmugMug logo",
+    label: "CashApp",
+    href: "https://cash.app/$AyChihuahuas",
+    img: "https://cdn.simpleicons.org/cashapp/ffffff",
+    alt: "Cash App logo",
     color: "#6db33f",
   },
   {
