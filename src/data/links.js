@@ -9,19 +9,19 @@ const links = [
   },
   {
     id: 2,
-    label: "CashApp",
-    href: "https://cash.app/$AyChihuahuas",
-    img: "https://cdn.simpleicons.org/cashapp/ffffff",
-    alt: "Cash App logo",
-    color: "#6db33f",
-  },
-  {
-    id: 3,
     label: "TikTok",
     href: "https://www.tiktok.com/@developedbydrewford",
     img: "https://cdn.simpleicons.org/tiktok/ffffff",
     alt: "TikTok logo",
     color: "#010101",
+  },
+    {
+    id: 3,
+    label: "CashApp",
+    href: "https://cash.app/$AyChihuahuas",
+    img: "https://cdn.simpleicons.org/cashapp/ffffff",
+    alt: "Cash App logo",
+    color: "#6db33f",
   },
   {
     id: 4,
